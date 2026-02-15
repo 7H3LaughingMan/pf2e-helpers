@@ -14,7 +14,7 @@ export class SYSTEM {
         return this.id === "sf2e";
     }
 
-    static path<T extends string>(tail: T): `systems/${string}/${T}`;
+    static path<T extends string>(tail: T): `systems/${SystemId}/${T}`;
     static path(...path: string[]): string;
     static path(...path: string[]): string {
         return `systems/${this.id}/${R.join(path, "/")}`;
