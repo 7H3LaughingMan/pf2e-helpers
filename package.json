@@ -14,6 +14,7 @@
     "author": "7H3LaughingMan <7H3LaughingMan@proton.me> (https://github.com/7H3LaughingMan)",
     "type": "module",
     "exports": {
+        "./lib-wrapper": "./dist/lib-wrapper/index.d.ts",
         "./utilities": "./dist/utilities/index.js"
     },
     "files": [
@@ -28,6 +29,7 @@
     },
     "dependencies": {
         "@7h3laughingman/foundry-helpers": "~13.351",
+        "@7h3laughingman/foundry-types": "~13.351",
         "@7h3laughingman/pf2e-types": "~7.10",
         "remeda": "^2.33.6"
     },

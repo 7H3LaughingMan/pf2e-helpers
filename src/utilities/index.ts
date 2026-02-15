@@ -10,3 +10,5 @@ declare module "@7h3laughingman/foundry-helpers/utilities" {
 }
 
 export * from "@7h3laughingman/foundry-helpers/utilities";
+
+export * from "./damage.js";
