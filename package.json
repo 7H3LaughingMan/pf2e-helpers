@@ -1,0 +1,49 @@
+{
+    "name": "@7h3laughingman/pf2e-helpers",
+    "version": "7.10.0",
+    "description": "Basic helpers used for developed modules for the PF2e/SF2e system.",
+    "license": "MIT",
+    "author": "7H3LaughingMan <7H3LaughingMan@proton.me> (https://github.com/7H3LaughingMan)",
+    "type": "module",
+    "exports": {
+        "./utilities": "./dist/utilities/index.js"
+    },
+    "files": [
+        "./dist/*"
+    ],
+    "scripts": {
+        "tsc": "tsc",
+        "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist",
+        "eslint": "eslint src",
+        "eslint:fix": "eslint src --fix && prettier src --write",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "*.{ts,mts,cts,tsc,js,mjs,cjs,jsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    },
+    "dependencies": {
+        "@7h3laughingman/foundry-helpers": "~13.351",
+        "@7h3laughingman/pf2e-types": "~7.10",
+        "remeda": "^2.33.6"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.39.2",
+        "@eslint/json": "^0.14.0",
+        "copyfiles": "^2.4.1",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.5",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
+        "prettier-plugin-organize-imports": "^4.3.0",
+        "typescript": "5.9.3",
+        "typescript-eslint": "^8.55.0"
+    },
+    "engines": {
+        "node": ">=24"
+    },
+    "sideEffects": false
+}
