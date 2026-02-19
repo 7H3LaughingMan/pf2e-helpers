@@ -1,4 +1,4 @@
-import { ActorPF2e, UserPF2e } from "@7h3laughingman/pf2e-types";
+import { ActorPF2e, ScenePF2e, TokenDocumentPF2e, TokenPF2e, UserPF2e } from "@7h3laughingman/pf2e-types";
 
 declare module "@7h3laughingman/foundry-helpers/utilities" {
     function getCurrentUser(): UserPF2e;
@@ -7,6 +7,7 @@ declare module "@7h3laughingman/foundry-helpers/utilities" {
     function isPrimaryUpdater(actor: ActorPF2e, user?: UserPF2e): boolean;
     function primaryPlayerOwner(actor: ActorPF2e): UserPF2e | null;
     function isPrimaryOwner(actor: ActorPF2e, user?: UserPF2e): boolean;
+    function getTargets(user?: UserPF2e): TokenPF2e<TokenDocumentPF2e<ScenePF2e>>[];
 }
 
 export * from "@7h3laughingman/foundry-helpers/utilities";
