@@ -16,7 +16,8 @@
     "exports": {
         "./lib-wrapper": "./dist/lib-wrapper/index.d.ts",
         "./socketlib": "./dist/socketlib/index.d.ts",
-        "./utilities": "./dist/utilities/index.js"
+        "./utilities": "./dist/utilities/index.js",
+        "./zod": "./dist/zod/index.js"
     },
     "files": [
         "./dist/*"
@@ -32,7 +33,8 @@
         "@7h3laughingman/foundry-helpers": "~13.351",
         "@7h3laughingman/foundry-types": "~13.351",
         "@7h3laughingman/pf2e-types": "~7.10",
-        "remeda": "^2.33.6"
+        "remeda": "^2.33.6",
+        "zod": "^4.3.6"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",

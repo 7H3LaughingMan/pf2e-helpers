@@ -3,5 +3,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "files.eol": "\n",
-    "git.followTagsWhenSync": true
+    "git.followTagsWhenSync": true,
+    "javascript.preferences.importModuleSpecifierEnding": "js",
+    "typescript.preferences.importModuleSpecifierEnding": "js"
 }

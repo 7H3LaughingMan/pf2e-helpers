@@ -13,5 +13,6 @@ export * from "@7h3laughingman/foundry-helpers/utilities";
 
 export * from "./check.js";
 export * from "./damage.js";
+export * from "./notes.js";
 export * from "./roll.js";
 export * from "./system.js";
