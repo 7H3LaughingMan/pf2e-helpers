@@ -29,8 +29,8 @@
         "rootDir": "src",
         "outDir": "dist",
         "types": [
-            "@7h3laughingman/pf2e-types",
-        ],
+            "@7h3laughingman/pf2e-types"
+        ]
     },
     "include": [
         "./src/**/*"
