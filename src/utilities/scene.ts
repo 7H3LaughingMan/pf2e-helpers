@@ -1,0 +1,25 @@
+import { ActorPF2e, ScenePF2e, TokenDocumentPF2e, TokenPF2e } from "@7h3laughingman/pf2e-types";
+import * as R from "remeda";
+import { isAllyOf, isEnemyOf } from "./alliance.js";
+import { distanceTo, isAdjacentTo } from "./token.js";
+
+export function getTokens(
+    scene: Maybe<ScenePF2e>,
+    args: {
+        allyOf?: TokenPF2e | TokenDocumentPF2e | ActorPF2e;
+        enemyOf?: TokenPF2e | TokenDocumentPF2e | ActorPF2e;
+        adjacentTo?: TokenPF2e | TokenDocumentPF2e;
+        distanceTo?: TokenPF2e | TokenDocumentPF2e;
+        distance?: number;
+    } = {}
+): TokenDocumentPF2e<ScenePF2e>[] {
+    if (R.isNullish(scene)) return [];
+
+    return scene.tokens.filter(
+        (token) =>
+            (R.isNonNullish(args.allyOf) ? isAllyOf(args.allyOf, token) : true) &&
+            (R.isNonNullish(args.enemyOf) ? isEnemyOf(args.enemyOf, token) : true) &&
+            (R.isNonNullish(args.adjacentTo) ? isAdjacentTo(args.adjacentTo, token) : true) &&
+            (R.isNonNullish(args.distance) ? distanceTo(args.distanceTo, token) >= (args.distance ?? 0) : true)
+    );
+}
