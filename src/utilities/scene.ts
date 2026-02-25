@@ -9,8 +9,8 @@ export function getTokens(
         allyOf?: TokenPF2e | TokenDocumentPF2e | ActorPF2e;
         enemyOf?: TokenPF2e | TokenDocumentPF2e | ActorPF2e;
         adjacentTo?: TokenPF2e | TokenDocumentPF2e;
-        distanceTo?: TokenPF2e | TokenDocumentPF2e;
-        distance?: number;
+        distanceTo?: { target: TokenPF2e | TokenDocumentPF2e; distance: number };
+        predicate?: (value: TokenDocumentPF2e<ScenePF2e>) => boolean;
     } = {}
 ): TokenDocumentPF2e<ScenePF2e>[] {
     if (R.isNullish(scene)) return [];
@@ -20,6 +20,7 @@ export function getTokens(
             (R.isNonNullish(args.allyOf) ? isAllyOf(args.allyOf, token) : true) &&
             (R.isNonNullish(args.enemyOf) ? isEnemyOf(args.enemyOf, token) : true) &&
             (R.isNonNullish(args.adjacentTo) ? isAdjacentTo(args.adjacentTo, token) : true) &&
-            (R.isNonNullish(args.distanceTo) ? distanceTo(args.distanceTo, token) <= (args.distance ?? 0) : true)
+            (R.isNonNullish(args.distanceTo) ? distanceTo(args.distanceTo.target, token) <= args.distanceTo.distance : true) &&
+            (R.isNonNullish(args.predicate) ? args.predicate(token) : true)
     );
 }
