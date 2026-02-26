@@ -10,5 +10,7 @@ export function getDamageRollClass(): typeof DamageRoll {
 }
 
 export function getDamageInstanceClass(): typeof DamageInstance {
-    return (_cached.damageInstance ??= CONFIG.Dice.rolls.find((value) => value.name === "DamageInstance") as typeof DamageInstance);
+    return (_cached.damageInstance ??= CONFIG.Dice.rolls.find(
+        (value) => value.name === "DamageInstance"
+    ) as typeof DamageInstance);
 }

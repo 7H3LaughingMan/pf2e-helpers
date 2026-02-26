@@ -1,8 +1,14 @@
-import { ActionType, NonPhysicalItemType, ProficiencyRank } from "@7h3laughingman/pf2e-types/module/item/base/data/index.js";
+import {
+    ActionType,
+    NonPhysicalItemType,
+    ProficiencyRank
+} from "@7h3laughingman/pf2e-types/module/item/base/data/index.js";
 import * as R from "remeda";
 import * as z from "zod";
 
-export const zActionType: z.ZodLazy<z.ZodLiteral<ActionType>> = z.lazy(() => z.literal(R.keys(CONFIG.PF2E.actionTypes)));
+export const zActionType: z.ZodLazy<z.ZodLiteral<ActionType>> = z.lazy(() =>
+    z.literal(R.keys(CONFIG.PF2E.actionTypes))
+);
 
 export const zNonPhysicalItemType: z.ZodLiteral<NonPhysicalItemType> = z.literal([
     "action",
@@ -23,4 +29,6 @@ export const zNonPhysicalItemType: z.ZodLiteral<NonPhysicalItemType> = z.literal
     "spellcastingEntry"
 ]);
 
-export const zProficiencyRank: z.ZodLazy<z.ZodLiteral<ProficiencyRank>> = z.lazy(() => z.literal(R.keys(CONFIG.PF2E.proficiencyRanks)));
+export const zProficiencyRank: z.ZodLazy<z.ZodLiteral<ProficiencyRank>> = z.lazy(() =>
+    z.literal(R.keys(CONFIG.PF2E.proficiencyRanks))
+);

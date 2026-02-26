@@ -45,6 +45,9 @@ const zCompoundStatement = z.union([
     zBiconditional
 ]);
 
-export const zPredicateStatement: z.ZodType<PredicateStatement, PredicateStatement> = z.union([zAtom, zCompoundStatement]);
+export const zPredicateStatement: z.ZodType<PredicateStatement, PredicateStatement> = z.union([
+    zAtom,
+    zCompoundStatement
+]);
 
 export const zRawPredicate: z.ZodType<RawPredicate, RawPredicate> = z.array(zPredicateStatement);

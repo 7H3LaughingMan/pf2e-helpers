@@ -1,8 +1,18 @@
 import { createHTMLElement } from "@7h3laughingman/foundry-helpers/utilities";
 import { UserVisibility } from "@7h3laughingman/pf2e-types/scripts/ui/user-visibility.js";
 
-export function notesToHTML(notes: { title?: string | null; text: string; visibility?: UserVisibility | null }[]): string | undefined {
-    function toHTML({ title, text, visibility }: { title?: string | null; text: string; visibility?: UserVisibility | null }): HTMLLIElement {
+export function notesToHTML(
+    notes: { title?: string | null; text: string; visibility?: UserVisibility | null }[]
+): string | undefined {
+    function toHTML({
+        title,
+        text,
+        visibility
+    }: {
+        title?: string | null;
+        text: string;
+        visibility?: UserVisibility | null;
+    }): HTMLLIElement {
         const element = createHTMLElement("li", {
             classes: ["roll-note"],
             dataset: {

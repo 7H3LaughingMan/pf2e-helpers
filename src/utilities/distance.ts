@@ -9,7 +9,11 @@ import { TokenPF2e } from "@7h3laughingman/pf2e-types";
 export function measureDistanceCuboid(
     r0: PIXI.Rectangle,
     r1: PIXI.Rectangle,
-    { reach = null, token = null, target = null }: { reach?: number | null; token?: TokenPF2e | null; target?: TokenPF2e | null } = {}
+    {
+        reach = null,
+        token = null,
+        target = null
+    }: { reach?: number | null; token?: TokenPF2e | null; target?: TokenPF2e | null } = {}
 ): number {
     if (canvas.grid.type !== CONST.GRID_TYPES.SQUARE) {
         return canvas.grid.measurePath([r0, r1]).distance;
@@ -67,7 +71,10 @@ export function measureDistanceCuboid(
         const height1 = Math.floor((targetDimensions.height / gridDistance) * gridSize);
 
         // XZ Plane
-        const xzPlane = { self: new PIXI.Rectangle(r0.x, elevation0, r0.width, height0), target: new PIXI.Rectangle(r1.x, elevation1, r1.width, height1) };
+        const xzPlane = {
+            self: new PIXI.Rectangle(r0.x, elevation0, r0.width, height0),
+            target: new PIXI.Rectangle(r1.x, elevation1, r1.width, height1)
+        };
 
         // Check for overlaps
         const elevationOverlap = [
@@ -121,7 +128,10 @@ export function measureDistance(p0: Point, p1: Point): number {
  * @param segment A paid of x/y/z distances constituting the line segment between two points
  * @param reach If this is a reach measurement, the origin actor's reach
  */
-function measureDistanceOnGrid(segment: { dx: number; dy: number; dz?: number | null }, { reach = null }: { reach?: number | null } = {}): number {
+function measureDistanceOnGrid(
+    segment: { dx: number; dy: number; dz?: number | null },
+    { reach = null }: { reach?: number | null } = {}
+): number {
     if (!canvas.dimensions) return NaN;
 
     const gridSize = canvas.dimensions.size;

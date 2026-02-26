@@ -1,7 +1,10 @@
 import { ActorPF2e, TokenDocumentPF2e, TokenPF2e } from "@7h3laughingman/pf2e-types";
 import * as R from "remeda";
 
-export function isAllyOf(a: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>, b: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>): boolean {
+export function isAllyOf(
+    a: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>,
+    b: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>
+): boolean {
     const actorA =
         a instanceof foundry.canvas.placeables.Token
             ? (a as TokenPF2e).actor
@@ -18,7 +21,10 @@ export function isAllyOf(a: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>, b:
     return R.isNonNullish(actorA) && R.isNonNullish(actorB) && actorA.isAllyOf(actorB);
 }
 
-export function isEnemyOf(a: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>, b: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>): boolean {
+export function isEnemyOf(
+    a: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>,
+    b: Maybe<TokenPF2e | TokenDocumentPF2e | ActorPF2e>
+): boolean {
     const actorA =
         a instanceof foundry.canvas.placeables.Token
             ? (a as TokenPF2e).actor

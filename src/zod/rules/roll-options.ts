@@ -16,7 +16,9 @@ export const zRollOptionSource = zRuleElementSource.extend({
     domain: z.string().optional(),
     option: z.string().optional(),
     phase: zAELikeDataPrepPhase.optional(),
-    suboptions: z.union([z.array(zSuboption), z.strictObject({ config: z.string(), predicate: zRawPredicate.optional() })]).optional(),
+    suboptions: z
+        .union([z.array(zSuboption), z.strictObject({ config: z.string(), predicate: zRawPredicate.optional() })])
+        .optional(),
     mergeable: z.boolean().optional(),
     value: z.union([z.boolean(), z.string()]).optional(),
     selection: z.string().optional(),

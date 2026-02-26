@@ -1,7 +1,15 @@
 import * as z from "zod";
 import { zRuleElementSource, zRuleValue } from "./base.js";
 
-export const zAELikeChangeMode = z.literal(["multiply", "add", "subtract", "remove", "downgrade", "upgrade", "override"]);
+export const zAELikeChangeMode = z.literal([
+    "multiply",
+    "add",
+    "subtract",
+    "remove",
+    "downgrade",
+    "upgrade",
+    "override"
+]);
 
 export type zAELikeChangeMode = z.infer<typeof zAELikeChangeMode>;
 

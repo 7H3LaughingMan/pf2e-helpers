@@ -20,7 +20,9 @@ export function getTokens(
             (R.isNonNullish(args.allyOf) ? isAllyOf(args.allyOf, token) : true) &&
             (R.isNonNullish(args.enemyOf) ? isEnemyOf(args.enemyOf, token) : true) &&
             (R.isNonNullish(args.adjacentTo) ? isAdjacentTo(args.adjacentTo, token) : true) &&
-            (R.isNonNullish(args.distanceTo) ? distanceTo(args.distanceTo.target, token) <= args.distanceTo.distance : true) &&
+            (R.isNonNullish(args.distanceTo)
+                ? distanceTo(args.distanceTo.target, token) <= args.distanceTo.distance
+                : true) &&
             (R.isNonNullish(args.predicate) ? args.predicate(token) : true)
     );
 }

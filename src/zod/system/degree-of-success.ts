@@ -1,4 +1,8 @@
-import { DegreeAdjustmentAmount, DegreeOfSuccessIndex, DegreeOfSuccessString } from "@7h3laughingman/pf2e-types/module/system/degree-of-success.js";
+import {
+    DegreeAdjustmentAmount,
+    DegreeOfSuccessIndex,
+    DegreeOfSuccessString
+} from "@7h3laughingman/pf2e-types/module/system/degree-of-success.js";
 import * as z from "zod";
 import { zZeroToThree } from "../data.js";
 
@@ -15,4 +19,9 @@ export const zDegreeAdjustmentAmount: z.ZodLiteral<DegreeAdjustmentAmount> = z.l
 
 export const zDegreeOfSuccessIndex: z.ZodLiteral<DegreeOfSuccessIndex> = zZeroToThree;
 
-export const zDegreeOfSuccessString: z.ZodLiteral<DegreeOfSuccessString> = z.literal(["criticalFailure", "failure", "success", "criticalSuccess"]);
+export const zDegreeOfSuccessString: z.ZodLiteral<DegreeOfSuccessString> = z.literal([
+    "criticalFailure",
+    "failure",
+    "success",
+    "criticalSuccess"
+]);
