@@ -30,7 +30,15 @@
         "outDir": "dist",
         "types": [
             "@7h3laughingman/pf2e-types"
-        ]
+        ],
+        "paths": {
+            "@utilities/*": [
+                "./src/utilities/*"
+            ],
+            "@zod/*": [
+                "./src/zod/*"
+            ]
+        }
     },
     "include": [
         "./src/**/*"

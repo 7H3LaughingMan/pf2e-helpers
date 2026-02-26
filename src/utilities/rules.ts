@@ -1,6 +1,3 @@
-import { zChoiceSetSource } from "#zod/rules/choice-set.js";
-import { zTokenMarkSource } from "#zod/rules/token-mark.js";
-import { zIs } from "#zod/type-guards.js";
 import {
     ActorTraitsRuleElement,
     AdjustDegreeOfSuccessRuleElement,
@@ -46,6 +43,9 @@ import {
     TokenNameRuleElement,
     WeaknessRuleElement
 } from "@7h3laughingman/pf2e-types";
+import { zChoiceSetSource } from "@zod/rules/choice-set.js";
+import { zTokenMarkSource } from "@zod/rules/token-mark.js";
+import { zIs } from "@zod/type-guards.js";
 
 export function getChoiceSetSelection<T extends ItemSourcePF2e>(itemSource: T, { flag }: { flag?: string } = {}) {
     return itemSource.system.rules

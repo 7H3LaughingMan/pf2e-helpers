@@ -19,15 +19,11 @@
         "./utilities": "./dist/utilities/index.js",
         "./zod": "./dist/zod/index.js"
     },
-    "imports": {
-        "#utilities/*": "./src/utilities/*",
-        "#zod/*": "./src/zod/*"
-    },
     "files": [
         "./dist/*"
     ],
     "scripts": {
-        "tsc": "tsc",
+        "build": "tsc && tsc-alias",
         "copyfiles": "copyfiles src/**/*.js src/**/*.d.ts dist -u 1",
         "eslint": "eslint src",
         "eslint:fix": "eslint src --fix && prettier src --write",
@@ -50,6 +46,7 @@
         "lint-staged": "^16.2.7",
         "native-copyfiles": "^2.0.1",
         "prettier-plugin-organize-imports": "^4.3.0",
+        "tsc-alias": "^1.8.16",
         "typescript": "5.9.3",
         "typescript-eslint": "^8.56.1"
     },
