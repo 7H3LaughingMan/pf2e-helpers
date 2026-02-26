@@ -28,7 +28,7 @@
     ],
     "scripts": {
         "tsc": "tsc",
-        "copy-dts": "copyfiles src/**/*.d.ts dist -u 1",
+        "copyfiles": "copyfiles src/**/*.js src/**/*.d.ts dist -u 1",
         "eslint": "eslint src",
         "eslint:fix": "eslint src --fix && prettier src --write",
         "prepare": "husky"

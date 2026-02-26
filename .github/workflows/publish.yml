@@ -35,7 +35,7 @@ jobs:
         run: npm clean-install
 
       - name: Build Package
-        run: npm run tsc && npm run copy-dts
+        run: npm run tsc && npm run copyfiles
 
       - name: Publish Package
         run: npm publish
