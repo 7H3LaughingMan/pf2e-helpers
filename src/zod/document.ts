@@ -24,7 +24,7 @@ export function zDocumentUUID<T extends foundry.utils.DocumentUUID>(
         if (resolvedUUID.type && !R.isIncludedIn(resolvedUUID.type, CONST.ALL_DOCUMENT_TYPES)) return false;
         if (embedded === true && !resolvedUUID.embedded.length) return false;
         if (embedded === false && resolvedUUID.embedded.length) return false;
-        if (!resolvedUUID.documentId || !foundry.data.validators.isValidId(resolvedUUID.documentId)) return false;
+        if (!resolvedUUID.id || !foundry.data.validators.isValidId(resolvedUUID.id)) return false;
 
         return true;
     });

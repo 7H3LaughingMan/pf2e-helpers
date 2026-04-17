@@ -1,7 +1,7 @@
 import * as R from "remeda";
 import * as z from "zod";
 
-export const zActiveEffectChangeMode = z.literal(R.values(CONST.ACTIVE_EFFECT_MODES));
+export const zActiveEffectChangeType = z.literal(R.values(CONST.ACTIVE_EFFECT_CHANGE_TYPES));
 
 export const zCanvasPerformanceMode = z.literal(R.values(CONST.CANVAS_PERFORMANCE_MODES));
 
@@ -24,8 +24,6 @@ export const zCompendiumDocumentType = z.literal(R.values(CONST.COMPENDIUM_DOCUM
 export const zDocumentOwnershipString = z.literal(R.keys(CONST.DOCUMENT_OWNERSHIP_LEVELS));
 
 export const zDocumentOwnershipLevel = z.literal(R.values(CONST.DOCUMENT_OWNERSHIP_LEVELS));
-
-export const zRollMode = z.literal(R.values(CONST.DICE_ROLL_MODES));
 
 export const zDrawingFillType = z.literal(R.values(CONST.DRAWING_FILL_TYPES));
 
@@ -73,11 +71,9 @@ export const zUserRoleName = z.literal(R.keys(CONST.USER_ROLES));
 
 export const zUserRole = z.literal(R.keys(CONST.USER_ROLE_NAMES));
 
-export const zMeasuredTemplateType = z.literal(R.values(CONST.MEASURED_TEMPLATE_TYPES));
-
 export const zUserPermission = z.literal(R.keys(CONST.USER_PERMISSIONS));
 
-export const zWallDirection = z.literal(R.values(CONST.WALL_DIRECTIONS));
+export const zEdgeDirection = z.literal(R.values(CONST.EDGE_DIRECTIONS));
 
 export const zWallDoorType = z.literal(R.values(CONST.WALL_DOOR_TYPES));
 
@@ -87,7 +83,7 @@ export const zWallDoorInteraction = z.literal(R.values(CONST.WALL_DOOR_INTERACTI
 
 export const zWallRestrictionType = z.literal(R.values(CONST.WALL_RESTRICTION_TYPES));
 
-export const zWallSenseType = z.literal(R.values(CONST.WALL_SENSE_TYPES));
+export const zEdgeSenseType = z.literal(R.values(CONST.EDGE_SENSE_TYPES));
 
 export const zWallMovementType = z.literal(R.values(CONST.WALL_MOVEMENT_TYPES));
 

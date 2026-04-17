@@ -8,8 +8,6 @@ import {
     EncounterPF2e,
     ItemPF2e,
     MacroPF2e,
-    MeasuredTemplateDocumentPF2e,
-    MeasuredTemplatePF2e,
     RegionBehaviorPF2e,
     RegionDocumentPF2e,
     RegionPF2e,
@@ -31,7 +29,6 @@ export * from "@7h3laughingman/foundry-helpers/utilities";
 export function isPlaceableObject(value: unknown, embeddedName: "AmbientLight"): value is AmbientLightPF2e;
 export function isPlaceableObject(value: unknown, embeddedName: "AmbientSound"): value is AmbientSound;
 export function isPlaceableObject(value: unknown, embeddedName: "Drawing"): value is Drawing;
-export function isPlaceableObject(value: unknown, embeddedName: "MeasuredTemplate"): value is MeasuredTemplatePF2e;
 export function isPlaceableObject(value: unknown, embeddedName: "Note"): value is Note;
 export function isPlaceableObject(value: unknown, embeddedName: "Region"): value is RegionPF2e;
 export function isPlaceableObject(value: unknown, embeddedName: "Tile"): value is Tile;
@@ -45,9 +42,6 @@ export function placeableObjectHasScene(
     value: Maybe<AmbientSound>
 ): value is AmbientSound<AmbientSoundDocument<ScenePF2e>>;
 export function placeableObjectHasScene(value: Maybe<Drawing>): value is Drawing<DrawingDocument<ScenePF2e>>;
-export function placeableObjectHasScene(
-    value: Maybe<MeasuredTemplatePF2e>
-): value is MeasuredTemplatePF2e<MeasuredTemplateDocumentPF2e<ScenePF2e>>;
 export function placeableObjectHasScene(value: Maybe<Note>): value is Note<NoteDocument<ScenePF2e>>;
 export function placeableObjectHasScene(value: Maybe<RegionPF2e>): value is RegionPF2e<RegionDocumentPF2e<ScenePF2e>>;
 export function placeableObjectHasScene(value: Maybe<Tile>): value is Tile<TileDocument<ScenePF2e>>;
@@ -59,11 +53,14 @@ export function isDocumentType(
     documentName: "ActiveEffect"
 ): value is ActiveEffectPF2e<ActorPF2e | ItemPF2e | null>;
 export function isDocumentType(value: unknown, documentName: "Actor"): value is ActorPF2e;
-export function isDocumentType(value: unknown, documentName: "ActorDelta"): value is ActorDelta;
+export function isDocumentType(value: unknown, documentName: "ActorDelta"): value is ActorDelta<TokenDocument | null>;
 export function isDocumentType(value: unknown, documentName: "Adventure"): value is Adventure;
 export function isDocumentType(value: unknown, documentName: "AmbientLight"): value is AmbientLightDocumentPF2e;
-export function isDocumentType(value: unknown, documentName: "AmbientSound"): value is AmbientSoundDocument;
-export function isDocumentType(value: unknown, documentName: "Card"): value is Card;
+export function isDocumentType(
+    value: unknown,
+    documentName: "AmbientSound"
+): value is AmbientSoundDocument<Scene | null>;
+export function isDocumentType(value: unknown, documentName: "Card"): value is Card<Cards | null>;
 export function isDocumentType(value: unknown, documentName: "Cards"): value is Cards;
 export function isDocumentType(value: unknown, documentName: "ChatMessage"): value is ChatMessagePF2e;
 export function isDocumentType(value: unknown, documentName: "Combat"): value is EncounterPF2e;
@@ -76,9 +73,9 @@ export function isDocumentType(value: unknown, documentName: "Item"): value is I
 export function isDocumentType(value: unknown, documentName: "JournalEntry"): value is JournalEntry;
 export function isDocumentType(value: unknown, documentName: "JournalEntryCategory"): value is JournalEntryCategory;
 export function isDocumentType(value: unknown, documentName: "JournalEntryPage"): value is JournalEntryPage;
+export function isDocumentType(value: unknown, documentName: "Level"): value is Level;
 export function isDocumentType(value: unknown, documentName: "Macro"): value is MacroPF2e;
-export function isDocumentType(value: unknown, documentName: "MeasuredTemplate"): value is MeasuredTemplateDocument;
-export function isDocumentType(value: unknown, documentName: "Note"): value is NoteDocument;
+export function isDocumentType(value: unknown, documentName: "Note"): value is NoteDocument<Scene | null>;
 export function isDocumentType(value: unknown, documentName: "Playlist"): value is Playlist;
 export function isDocumentType(value: unknown, documentName: "PlaylistSound"): value is PlaylistSound;
 export function isDocumentType(value: unknown, documentName: "Region"): value is RegionDocumentPF2e;
@@ -96,17 +93,20 @@ export function documentHasParent(
     value: Maybe<ActiveEffectPF2e<ActorPF2e | ItemPF2e | null>>
 ): value is ActiveEffectPF2e<ActorPF2e | ItemPF2e>;
 export function documentHasParent(value: Maybe<ActorPF2e>): value is ActorPF2e<TokenDocumentPF2e>;
-export function documentHasParent(value: Maybe<ActorDelta>): value is ActorDelta<TokenDocumentPF2e>;
+export function documentHasParent(
+    value: Maybe<ActorDelta<TokenDocument | null>>
+): value is ActorDelta<TokenDocumentPF2e>;
 export function documentHasParent(value: Maybe<AmbientLightDocumentPF2e>): value is AmbientLightDocumentPF2e<ScenePF2e>;
-export function documentHasParent(value: Maybe<AmbientSoundDocument>): value is AmbientSoundDocument<ScenePF2e>;
+export function documentHasParent(
+    value: Maybe<AmbientSoundDocument<Scene | null>>
+): value is AmbientSoundDocument<ScenePF2e>;
 export function documentHasParent(value: Maybe<CombatantPF2e>): value is CombatantPF2e<EncounterPF2e>;
 export function documentHasParent(value: Maybe<CombatantGroup>): value is CombatantGroup<EncounterPF2e>;
 export function documentHasParent(value: Maybe<DrawingDocument>): value is DrawingDocument<ScenePF2e>;
 export function documentHasParent(value: Maybe<ItemPF2e>): value is ItemPF2e<ActorPF2e>;
 export function documentHasParent(value: Maybe<JournalEntryCategory>): value is JournalEntryCategory<JournalEntry>;
 export function documentHasParent(value: Maybe<JournalEntryPage>): value is JournalEntryPage<JournalEntry>;
-export function documentHasParent(value: Maybe<MeasuredTemplateDocument>): value is MeasuredTemplateDocument<Scene>;
-export function documentHasParent(value: Maybe<NoteDocument>): value is NoteDocument<ScenePF2e>;
+export function documentHasParent(value: Maybe<NoteDocument<Scene | null>>): value is NoteDocument<ScenePF2e>;
 export function documentHasParent(value: Maybe<PlaylistSound>): value is PlaylistSound<Playlist>;
 export function documentHasParent(value: Maybe<RegionDocumentPF2e>): value is RegionDocumentPF2e<ScenePF2e>;
 export function documentHasParent(value: Maybe<RegionBehaviorPF2e>): value is RegionBehaviorPF2e<RegionDocumentPF2e>;
