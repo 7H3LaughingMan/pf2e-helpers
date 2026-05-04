@@ -32,25 +32,25 @@
     },
     "dependencies": {
         "@7h3laughingman/foundry-helpers": "~14.360.0",
-        "@7h3laughingman/foundry-types": "~14.360.8",
+        "@7h3laughingman/foundry-types": "~14.360.9",
         "@7h3laughingman/pf2e-types": "~8.0.2",
-        "remeda": "^2.33.7",
-        "zod": "^4.3.6"
+        "remeda": "^2.34.0",
+        "zod": "^4.4.3"
     },
     "devDependencies": {
         "@eslint/js": "^10.0.1",
         "@eslint/json": "^1.2.0",
         "@types/jquery": "^3.5.34",
-        "eslint": "^10.2.0",
+        "eslint": "^10.3.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.5",
         "husky": "^9.1.7",
         "lint-staged": "^16.4.0",
         "native-copyfiles": "^2.0.1",
         "prettier-plugin-organize-imports": "^4.3.0",
-        "tsc-alias": "^1.8.16",
+        "tsc-alias": "^1.8.17",
         "typescript": "5.9.3",
-        "typescript-eslint": "^8.58.2"
+        "typescript-eslint": "^8.59.2"
     },
     "engines": {
         "node": ">=24"
