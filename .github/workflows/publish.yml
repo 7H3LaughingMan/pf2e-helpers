@@ -32,4 +32,4 @@ jobs:
         run: pnpm run build && pnpm run copyfiles
 
       - name: Publish Package
-        run: pnpm publish
+        run: pnpm publish --no-git-check
